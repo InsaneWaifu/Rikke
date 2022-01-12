@@ -1,0 +1,4 @@
+rich
+httpx
+bs4
+regex
