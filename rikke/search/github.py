@@ -2,21 +2,21 @@ import httpx
 from bs4 import BeautifulSoup as bs
 import regex as re
 
-reg = re.compile(r"(?:name|i'?m):?\s+(?:is|called)?\s*?([a-zA-Z ]+)", re.IGNORECASE, re.MULTILINE)
+reg = re.compile(r"(?:name|im|i'm):?\s+(?:is|called)?\s*?([a-zA-Z/ ]+)", re.IGNORECASE, re.MULTILINE)
 
 ema = re.compile(r"(?:email):?\s+(?:is)?\s*?([a-zA-Z0-9@. ]+)", re.IGNORECASE, re.MULTILINE)
 
-dis = re.compile(r"(?:discord):?\s+(?:is)?\s*?([a-zA-Z0-9@#._\-! ]+)", re.IGNORECASE, re.MULTILINE)
+dis = re.compile(r"([a-zA-Z0-9@._\-! ]+#[0-9]{4})", re.IGNORECASE, re.MULTILINE)
 
-red = re.compile(r"(?:reddit):?\s+(?:is)?\s*?([a-zA-Z0-9@./ ]+)", re.IGNORECASE, re.MULTILINE)
+red = re.compile(r"u/([a-zA-Z0-9@]+)", re.IGNORECASE, re.MULTILINE)
 
-twi = re.compile(r"(?:twitter):?\s+(?:is)?\s*?([a-zA-Z0-9@. ]+)", re.IGNORECASE, re.MULTILINE)
+twi = re.compile(r"(@[a-zA-Z0-9. ]+)", re.IGNORECASE, re.MULTILINE)
 
-fem = re.compile(r"she/her", re.IGNORECASE, re.MULTILINE)
+fem = re.compile(r"(she/her)|(female)", re.IGNORECASE, re.MULTILINE)
 
-male = re.compile(r"he/him", re.IGNORECASE, re.MULTILINE)
+male = re.compile(r"(he/him)|(male)", re.IGNORECASE, re.MULTILINE)
 
-nb = re.compile(r"non[- ]*binary", re.IGNORECASE, re.MULTILINE)
+nb = re.compile(r"(they/them)|(non[- ]*binary)", re.IGNORECASE, re.MULTILINE)
 
 name = "GitHub"
 
