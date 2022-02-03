@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    toSearch = ["search.github", "search.dummy"]
+    toSearch = ["search.github", "search.dummy", "search.facebook"]
 
     console = Console()
 
